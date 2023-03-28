@@ -3,8 +3,10 @@ package com.iftm.apirest.models;
 
 import jakarta.persistence.*;
 
-@Table(name="user")
-public class User {
+import java.io.Serializable;
+@Entity
+@Table(name="user_table")
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

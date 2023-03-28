@@ -14,7 +14,7 @@ public class EmailService {
     @Autowired
     private EmailRepository emailRepository;
 
-    public List<Email> getAllEmail(){
+    public List<Email> getAllEmails(){
         return emailRepository.findAll();
     }
 
@@ -22,7 +22,7 @@ public class EmailService {
         return emailRepository.findById(id);
     }
 
-    public Email Save(Email email){
+    public Email save(Email email){
         return emailRepository.save(email);
     }
 

@@ -10,5 +10,4 @@ public interface EmailRepository extends JpaRepository<Email, Long> {
 
 
 
-
 }

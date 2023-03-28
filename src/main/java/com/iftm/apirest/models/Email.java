@@ -3,31 +3,31 @@ package com.iftm.apirest.models;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-
-@Table(name="email")
+@Entity
+@Table(name="email_table")
 public class Email implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "from", nullable = false, length = 50)
-    private String from;
-    @Column(name = "to", nullable = false, length = 100)
-    private String to;
-    @Column(name = "subjetc", nullable = false, length = 50)
-    private String subjetc;
-    @Column(name = "body", nullable = false, length = 300)
-    private String body;
-    @Column(name = "attachment", nullable = false, length = 100)
-    private String attachment;
+    @Column(name = "de", nullable = false, length = 50)
+    private String de;
+    @Column(name = "para", nullable = false, length = 100)
+    private String para;
+    @Column(name = "assunto", nullable = false, length = 50)
+    private String assunto;
+    @Column(name = "corpo", nullable = false, length = 300)
+    private String corpo;
+    @Column(name = "anexo", nullable = false, length = 100)
+    private String anexo;
 
-    public Email(Long id, String from, String to, String subjetc, String body, String attachment) {
+    public Email(Long id, String de, String para, String assunto, String corpo, String anexo) {
         this.id = id;
-        this.from = from;
-        this.to = to;
-        this.subjetc = subjetc;
-        this.body = body;
-        this.attachment = attachment;
+        this.de = de;
+        this.para = para;
+        this.assunto = assunto;
+        this.corpo = corpo;
+        this.anexo = anexo;
     }
 
     public Email() { }
@@ -40,56 +40,44 @@ public class Email implements Serializable {
         this.id = id;
     }
 
-    public String getFrom() {
-        return from;
+    public String getDe() {
+        return de;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setDe(String de) {
+        this.de = de;
     }
 
-    public String getTo() {
-        return to;
+    public String getPara() {
+        return para;
     }
 
-    public void setTo(String to) {
-        this.to = to;
+    public void setPara(String para) {
+        this.para = para;
     }
 
-    public String getSubjetc() {
-        return subjetc;
+    public String getAssunto() {
+        return assunto;
     }
 
-    public void setSubjetc(String subjetc) {
-        this.subjetc = subjetc;
+    public void setAssunto(String assunto) {
+        this.assunto = assunto;
     }
 
-    public String getBody() {
-        return body;
+    public String getCorpo() {
+        return corpo;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setCorpo(String corpo) {
+        this.corpo = corpo;
     }
 
-    public String getAttachment() {
-        return attachment;
+    public String getAnexo() {
+        return anexo;
     }
 
-    public void setAttachment(String attachment) {
-        this.attachment = attachment;
-    }
-
-    @Override
-    public String toString() {
-        return "Email{" +
-                "id=" + id +
-                ", from='" + from + '\'' +
-                ", to='" + to + '\'' +
-                ", subjetc='" + subjetc + '\'' +
-                ", body='" + body + '\'' +
-                ", attachment='" + attachment + '\'' +
-                '}';
+    public void setAnexo(String anexo) {
+        this.anexo = anexo;
     }
 
     @Override
@@ -100,21 +88,21 @@ public class Email implements Serializable {
         Email email = (Email) o;
 
         if (id != null ? !id.equals(email.id) : email.id != null) return false;
-        if (from != null ? !from.equals(email.from) : email.from != null) return false;
-        if (to != null ? !to.equals(email.to) : email.to != null) return false;
-        if (subjetc != null ? !subjetc.equals(email.subjetc) : email.subjetc != null) return false;
-        if (body != null ? !body.equals(email.body) : email.body != null) return false;
-        return attachment != null ? attachment.equals(email.attachment) : email.attachment == null;
+        if (de != null ? !de.equals(email.de) : email.de != null) return false;
+        if (para != null ? !para.equals(email.para) : email.para != null) return false;
+        if (assunto != null ? !assunto.equals(email.assunto) : email.assunto != null) return false;
+        if (corpo != null ? !corpo.equals(email.corpo) : email.corpo != null) return false;
+        return anexo != null ? anexo.equals(email.anexo) : email.anexo == null;
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (from != null ? from.hashCode() : 0);
-        result = 31 * result + (to != null ? to.hashCode() : 0);
-        result = 31 * result + (subjetc != null ? subjetc.hashCode() : 0);
-        result = 31 * result + (body != null ? body.hashCode() : 0);
-        result = 31 * result + (attachment != null ? attachment.hashCode() : 0);
+        result = 31 * result + (de != null ? de.hashCode() : 0);
+        result = 31 * result + (para != null ? para.hashCode() : 0);
+        result = 31 * result + (assunto != null ? assunto.hashCode() : 0);
+        result = 31 * result + (corpo != null ? corpo.hashCode() : 0);
+        result = 31 * result + (anexo != null ? anexo.hashCode() : 0);
         return result;
     }
 }
